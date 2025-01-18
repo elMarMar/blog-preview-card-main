@@ -13,7 +13,12 @@
     />
 
     <title>Frontend Mentor | Blog preview card</title>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       .attribution {
@@ -22,6 +27,11 @@
       }
       .attribution a {
         color: hsl(228, 45%, 44%);
+      }
+
+      * {
+        font-family: "Figtree", serif;
+        font-weight: 500;
       }
 
       body {
@@ -33,6 +43,11 @@
         background-color: hsl(47, 88%, 63%);
       }
 
+      p,
+      h1 {
+        margin: 0px;
+      }
+
       .content {
         flex-grow: 1; /*Fills Remaining Space*/
         flex-shrink: 1; /*Allows shrinking for shorter displays*/
@@ -42,11 +57,15 @@
       }
 
       .card {
-        background-color: hsl(0, 0%, 100%);
-        height: 400px;
-        padding: 15px;
+        display: flex; /*will allow me to margin-auto for profile*/
+        flex-direction: column;
 
-        border-radius: 15px;
+        background-color: hsl(0, 0%, 100%);
+        height: 450px;
+        max-width: 336px;
+        padding: 20px;
+
+        border-radius: 20px;
         border-style: solid;
         border-color: black;
         border-width: 1px;
@@ -55,12 +74,87 @@
       .card > img {
         border-radius: 15px;
       }
+
+      .card #learning {
+        align-self: flex-start; /*overrides the default - align-items: stretch - in flexbox*/
+        width: auto;
+        background-color: hsl(47, 88%, 63%);
+
+        font-size: 0.8rem;
+        font-weight: 800;
+        padding: 3px 6px 3px 6px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        border-radius: 3px;
+      }
+
+      .card #published-date {
+        font-size: 0.8rem;
+        color: hsl(0, 0%, 7%);
+      }
+
+      .card > a {
+        text-decoration: none;
+      }
+
+      .card > a:visited {
+        color: inherit;
+      }
+
+      .card > a:hover {
+        color: hsl(47, 88%, 63%);
+      }
+
+      .card > a > h1 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+
+      .card #info {
+        color: hsl(0, 0%, 42%);
+      }
+
+      .profile {
+        padding-bottom: 5px;
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+      }
+      .profile #avatar {
+        width: 32px;
+      }
+
+      .profile > span {
+        margin-left: 6px;
+        font-weight: 800;
+        font-size: 0.8rem;
+      }
     </style>
   </head>
   <body>
     <div class="content">
       <div class="card">
         <img src="./assets/images/illustration-article.svg" alt="card image" />
+        <p id="learning">Learning</p>
+        <p id="published-date">Published 21 Dec 2023</p>
+        <a
+          href="https://www.theodinproject.com/paths/foundations/courses/foundations"
+          ><h1>HTML & CSS foundations</h1>
+        </a>
+        <p id="info">
+          These languages are the backbone of every website, defining structure,
+          content, and presentation.
+        </p>
+        <div class="profile">
+          <img
+            id="avatar"
+            src="./assets/images/image-avatar.webp"
+            alt="Greg Hooper Photo"
+          />
+          <span>Greg Hooper</span>
+        </div>
       </div>
     </div>
 
